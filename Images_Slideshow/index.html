@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Images Slideshow</title>
+</head>
+<body>
+    <section class="slideshow"> 
+        <div class="slideshow-images"> 
+            <img class="slide-image change" src="assets/img1.jpg"/> 
+            <img class="slide-image" src="assets/img2.jpg"/> 
+            <img class="slide-image" src="assets/img3.jpg"/> 
+            <img class="slide-image" src="assets/img4.jpg"/> 
+        </div>                 
+    </section>  
+<style>
+.slideshow {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(213, 189, 189);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position:relative;
+}
+
+.slideshow-images {
+    width:350px;
+    height:350px;
+    border:2px solid red;
+   position:relative;
+}
+
+
+.slide-image {
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%) scale(0);
+     transition: transform 0.3s;
+}
+
+
+.slide-image.change {
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s 0.3s;
+}
+
+</style>
+<script>
+   const images = document.querySelectorAll('.slide-image')
+    let i = 1
+
+setInterval(() => {
+	i++
+	const myimage = document.querySelector('.slide-image.change')
+	myimage.classList.remove('change')
+
+	if (i > images.length) {
+		images[0].classList.add('change')
+		i = 1
+	} else {
+		myimage.nextElementSibling.classList.add('change')
+	}
+}, 4000) 
+</script>
+
+</body>
+</html>
