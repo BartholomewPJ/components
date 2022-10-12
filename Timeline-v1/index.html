@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head data-pg-collapsed> 
+        <meta charset="utf-8"/> 
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+        <meta name="description" content=""/> 
+        <meta name="author" content=""/> 
+        <title>Timeline Tutorial</title>         
+        
+    </head>     
+    <body>
+        <section class="section-one" data-pg-collapsed>
+            <div class="timeline-item" data-pgc-define="section-for-timeline" data-pgc-define-auto-update="false" data-pgc-define-map-urls="false">
+                <img src="https://pinegrow.com/placeholders/img14.jpg" class="timeline-item-image"/>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus veniam dolores ullam doloremque omnis. Eveniet, cupiditate est. Eos amet eius debitis dolorum. Tenetur nisi provident, natus voluptatum laudantium qui. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad voluptas natus quos nostrum possimus atque nihil delectus iusto sapiente ipsum minima unde voluptatum nulla non, exercitationem provident. Optio illo architecto obcaecati fugiat dicta in, ad, perspiciatis unde voluptatem soluta, reiciendis ab tempora nulla deserunt dignissimos delectus voluptate error eius velit!</p>
+            </div>
+            <div class="timeline-item">
+                <img src="https://pinegrow.com/placeholders/img14.jpg" class="timeline-item-image"/>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus veniam dolores ullam doloremque omnis. Eveniet, cupiditate est. Eos amet eius debitis dolorum. Tenetur nisi provident, natus voluptatum laudantium qui. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam, recusandae commodi quo incidunt adipisci necessitatibus veritatis amet ipsa nostrum corrupti nesciunt eaque a nemo. Maxime tempore soluta, illo hic debitis sit at voluptates ullam architecto adipisci molestiae repudiandae veniam corporis accusantium impedit nemo voluptate deleniti nisi laudantium expedita! Ex sunt molestias sint aliquam facilis fuga vitae ducimus dolorem tenetur.</p>
+            </div>
+            <div class="timeline-item">
+                <img src="https://pinegrow.com/placeholders/img14.jpg" class="timeline-item-image"/>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus veniam dolores ullam doloremque omnis. Eveniet, cupiditate est. Eos amet eius debitis dolorum. Tenetur nisi provident, natus voluptatum laudantium qui. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis molestiae quo maxime dolorem corrupti, nam eveniet dolor assumenda. Minus dolorem tempora ipsum qui repellendus vero? Necessitatibus iure eligendi et deleniti qui ad voluptatem optio eum, sequi nihil nam! Consequuntur impedit rem nisi mollitia quae enim aut esse distinctio molestias debitis.</p>
+            </div>
+            <div class="timeline-item">
+                <img src="https://pinegrow.com/placeholders/img14.jpg" class="timeline-item-image"/>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus veniam dolores ullam doloremque omnis. Eveniet, cupiditate est. Eos amet eius debitis dolorum. Tenetur nisi provident, natus voluptatum laudantium <qui class="lorem50"></qui> </p>
+            </div>
+            <div class="timeline-item">
+                <img src="https://pinegrow.com/placeholders/img14.jpg" class="timeline-item-image"/>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque doloribus veniam dolores ullam doloremque omnis. Eveniet, cupiditate est. Eos amet eius debitis dolorum. Tenetur nisi provident, natus voluptatum laudantium qui. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum excepturi molestias nostrum eos architecto? Adipisci repellendus quidem cum facilis illum? Quia at rem velit hic. Quas, eos, nostrum magni suscipit corporis ab ipsum iure quis sapiente expedita accusantium quisquam? Perspiciatis atque aliquam ipsa dolore? Animi asperiores debitis aspernatur commodi atque!</p>
+            </div>
+        </section>
+        <style>
+.section-one {
+    min-width: 400px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightcyan;
+    padding: 20px;
+}
+
+.timeline-item {
+    margin: 0;
+    padding: 40px;
+    position: relative;
+    display: flex;
+    border-top-style: solid;
+    border-top-width: 3px;
+    font-size: 1em;
+    line-height: 1.75em;
+    text-align: center;
+    justify-content: flex-start;
+    border-image: linear-gradient(to right,#743ad5 0%,#d53a9d 100%);
+    border-image-slice: 1;
+    counter-increment: section;
+}
+
+@media (max-width:680px) {
+    .timeline-item {
+        display:block;
+    }
+
+    .timeline-item img {
+        float:right;
+        padding:10px;
+    }
+}
+.timeline-item-image {
+    width: 200px;
+    height: 200px;
+}
+
+.timeline-item:before {
+    height: 1.25em;
+    width: 1.25em;
+    padding: 10px;
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgb(8, 0, 255);
+    background-color: rgb(134, 203, 239);
+    font-size: 1em;
+    line-height: 1.25em;
+    color: rgb(36, 36, 190);
+    text-align: center;
+    content: counter(section);
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.timeline-item:nth-child(odd) {
+    padding-left: 0;
+    border-right-width: 3px;
+    border-right-style: solid;
+    text-align: right;
+    justify-content: flex-end;
+}
+
+.timeline-item:nth-child(odd):before {
+    margin-left: -20px;
+    left: 100%;
+    z-index: 100;
+}
+
+.timeline-item:nth-child(even) {
+    padding-right: 0;
+    border-left-width: 3px;
+    border-left-style: solid;
+}
+
+.timeline-item:nth-child(even):before {
+    margin-right: -20px;
+    right: 100%;
+}
+
+.timeline-item:nth-child(odd) img {
+    order: 2;
+}
+
+.timeline-item:nth-child(odd) p {
+    padding-right: 20px;
+}
+
+.timeline-item:nth-child(even) p {
+    padding-left: 20px;
+    text-align: left;
+}
+
+        </style>
+    </body>     
+</html>
